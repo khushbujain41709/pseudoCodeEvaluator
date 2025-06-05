@@ -1,0 +1,25 @@
+Quantization is conversion from high memory format to lower memory format. This will lead to loss of accuracy but it can be tackled using many different techniques.
+There are two types of quantization :
+1) Symmetric quantization - Batch normalization is the method of doing symmetric quantization.
+2) Assymmetric quantization - Distribution of data is Assymmetric.
+
+Symmetric unsigned int 8 quantization :
+Let an array of floating point 32 bits [0.0 to 1000] is given we have to convert it into unsigned int 8 bits that is 0 to 2^8-1  ~ 0 to 255 range.
+using min max scalar :
+scale = (xmax - xmin)/(qmax - qmin) = (1000 - 0) / (255 - 0) = 3.92 = scale factor
+using formula round(x/3.92) we get, conversion of x into 8 bits from 32 bits.
+let x = 250, round(250/3.92) = 64, here zero point is 0
+
+Asymmetric unsigned int 8 quantization :
+Let an array of floating point 32 bits [-20.0 to 1000] is given we have to convert it into unsigned int 8 bits that is 0 to 2^8-1  ~ 0 to 255 range.
+using min max scalar :
+scale = (xmax - xmin)/(qmax - qmin) = (1000 + 20) / (255 - 0) = 4 = scale factor
+using formula round(x/4) we get, conversion of x into 8 bits from 32 bits.
+let x = -20.0 , round(-20.0/4) = -5, now -5 does not lie between 0 to 255 so adding 5 to -5 , -5 + 5 = 0, here zero point is +5
+
+Calibration - Process applied in the quantization process is known as calibration process.
+
+Modes of quantization :
+1) Post Training Quantization(PTQ) - Here, we have a pre Trained model where the weights are fixed. We will take the weights and apply the calibration and then my quantized model is created. We will use this quantized model for different use cases.
+In this technique, there is a loss of data and loss of accuracy.
+2) Quantization Aware Training(QAT) - Here, we have a pre Trained model where the weights are fixed. We will take the weights and apply the calibration and then we will do fine tuning. In fine tuning we will take a new training data and then my quantized model is created.
