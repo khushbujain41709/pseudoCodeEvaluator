@@ -1,0 +1,994 @@
+{
+  "pseudo_code_samples": [
+    {
+      "problem": "Find the factorial of a number",
+      "pseudo_code": "start\n  read n\n  fact=1\n  for i=1 to n\n    fact=fact*i\n  endfor\n  print fact\nend",
+      "marks": 16,
+      "feedback": [
+        "Correct logic for factorial",
+        "Proper use of loop",
+        "No input validation for negatives",
+        "Clean structure"
+      ]
+    },
+    {
+      "problem": "Check if a number is prime",
+      "pseudo_code": "start\n  read num\n  if num < 2\n    print 'Not prime'\n    stop\n  endif\n  for i=2 to num/2\n    if num mod i == 0\n      print 'Not prime'\n      stop\n    endif\n  endfor\n  print 'Prime'\nend",
+      "marks": 18,
+      "feedback": [
+        "Correct prime checking logic",
+        "Early exit for non-prime numbers",
+        "Efficient loop up to num/2",
+        "Missing case for num=2"
+      ]
+    },
+    {
+      "problem": "Calculate sum of array elements",
+      "pseudo_code": "start\n  read array\n  sum=0\n  while array has elements\n    sum=sum+next element\n  endwhile\n  print sum\nend",
+      "marks": 14,
+      "feedback": [
+        "Correct summation logic",
+        "Vague array traversal (better to use index)",
+        "No array size validation",
+        "Readable structure"
+      ]
+    },
+    {
+      "problem": "Find maximum in array",
+      "pseudo_code": "start\n  read arr\n  max=0\n  for each x in arr\n    if x > max\n      max=x\n    endif\n  endfor\n  print max\nend",
+      "marks": 12,
+      "feedback": [
+        "Logic mostly correct",
+        "Fails for all-negative numbers (max initialized to 0)",
+        "Should use first element as initial max",
+        "Clear iteration"
+      ]
+    },
+    {
+      "problem": "Linear search in array",
+      "pseudo_code": "start\n  read arr, target\n  found=false\n  for i=0 to length(arr)-1\n    if arr[i]=target\n      found=true\n      break\n    endif\n  endfor\n  print found\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct search algorithm",
+        "Proper use of flag variable",
+        "Early exit when found",
+        "No handling of empty array"
+      ]
+    },
+    {
+      "problem": "Bubble sort",
+      "pseudo_code": "start\n  read arr\n  n=length(arr)\n  for i=0 to n-1\n    for j=0 to n-i-1\n      if arr[j]>arr[j+1]\n        swap arr[j], arr[j+1]\n      endif\n    endfor\n  endfor\n  print arr\nend",
+      "marks": 19,
+      "feedback": [
+        "Correct bubble sort implementation",
+        "Proper nested loops",
+        "Efficient inner loop boundary",
+        "No optimization for early exit if sorted"
+      ]
+    },
+    {
+      "problem": "Binary search (flawed)",
+      "pseudo_code": "start\n  read arr, target\n  low=0\n  high=length(arr)\n  while low<high\n    mid=(low+high)/2\n    if arr[mid]=target\n      print 'Found'\n    elseif arr[mid]<target\n      low=mid\n    else\n      high=mid\n    endif\n  endwhile\n  print 'Not found'\nend",
+      "marks": 10,
+      "feedback": [
+        "Infinite loop risk (low/high updates incorrect)",
+        "Missing return after finding target",
+        "Assumes sorted input but doesn't verify",
+        "Basic binary search structure present"
+      ]
+    },
+    {
+      "problem": "Reverse a string",
+      "pseudo_code": "start\n  read str\n  reversed=''\n  for i=length(str)-1 downto 0\n    reversed=reversed+str[i]\n  endfor\n  print reversed\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct reversal logic",
+        "Proper string concatenation",
+        "Clear index handling",
+        "No input validation for empty string"
+      ]
+    },
+    {
+      "problem": "Fibonacci sequence (flawed)",
+      "pseudo_code": "start\n  read n\n  a=0\n  b=1\n  for i=1 to n\n    print a\n    a=b\n    b=a+b\n  endfor\nend",
+      "marks": 8,
+      "feedback": [
+        "Incorrect Fibonacci calculation (a and b update wrong)",
+        "Missing handling for n=0 case",
+        "Proper loop structure",
+        "Output formatting is clear"
+      ]
+    },
+    {
+      "problem": "Check palindrome string",
+      "pseudo_code": "start\n  read str\n  n=length(str)\n  for i=0 to n/2\n    if str[i]!=str[n-i-1]\n      print 'Not palindrome'\n      stop\n    endif\n  endfor\n  print 'Palindrome'\nend",
+      "marks": 18,
+      "feedback": [
+        "Correct palindrome check",
+        "Efficient half-array traversal",
+        "Early exit when mismatch found",
+        "Case sensitivity not addressed"
+      ]
+    },
+    {
+      "problem": "Calculate average of array",
+      "pseudo_code": "start\n  read arr\n  sum=0\n  count=0\n  for each x in arr\n    sum=sum+x\n    count=count+1\n  endfor\n  if count=0\n    print 'Error: empty array'\n  else\n    print sum/count\n  endif\nend",
+      "marks": 20,
+      "feedback": [
+        "Correct average calculation",
+        "Handles empty array case",
+        "Clear accumulation logic",
+        "Good error handling"
+      ]
+    },
+    {
+      "problem": "Find GCD of two numbers (flawed)",
+      "pseudo_code": "start\n  read a, b\n  while a!=b\n    if a>b\n      a=a-b\n    else\n      b=b-a\n    endif\n  endwhile\n  print a\nend",
+      "marks": 14,
+      "feedback": [
+        "Correct Euclidean algorithm",
+        "Fails when one input is 0",
+        "No input validation for negatives",
+        "Clear while loop structure"
+      ]
+    },
+    {
+      "problem": "Count vowels in string",
+      "pseudo_code": "start\n  read str\n  vowels='aeiouAEIOU'\n  count=0\n  for each char in str\n    if char in vowels\n      count=count+1\n    endif\n  endfor\n  print count\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct vowel counting",
+        "Handles both cases",
+        "Clear membership check",
+        "No handling of non-alphabetic characters"
+      ]
+    },
+    {
+      "problem": "Matrix multiplication (flawed)",
+      "pseudo_code": "start\n  read mat1, mat2\n  result=new matrix\n  for i=0 to rows(mat1)\n    for j=0 to cols(mat2)\n      sum=0\n      for k=0 to cols(mat1)\n        sum=sum+mat1[i][k]*mat2[k][j]\n      endfor\n      result[i][j]=sum\n    endfor\n  endfor\n  print result\nend",
+      "marks": 12,
+      "feedback": [
+        "Multiplication logic mostly correct",
+        "No dimension compatibility check",
+        "Potential index out of bounds",
+        "Proper triple nested loop structure"
+      ]
+    },
+    {
+      "problem": "Remove duplicates from array",
+      "pseudo_code": "start\n  read arr\n  unique=[]\n  for each x in arr\n    if x not in unique\n      append x to unique\n    endif\n  endfor\n  print unique\nend",
+      "marks": 16,
+      "feedback": [
+        "Correct deduplication logic",
+        "Inefficient for large arrays (O(n^2))",
+        "Preserves order",
+        "No handling of empty input"
+      ]
+    },
+    {
+      "problem": "Check balanced parentheses",
+      "pseudo_code": "start\n  read str\n  stack=[]\n  for each char in str\n    if char='('\n      push stack, char\n    elseif char=')'\n      if empty(stack)\n        print 'Unbalanced'\n        stop\n      endif\n      pop stack\n    endif\n  endfor\n  if empty(stack)\n    print 'Balanced'\n  else\n    print 'Unbalanced'\n  endif\nend",
+      "marks": 20,
+      "feedback": [
+        "Correct stack-based solution",
+        "Handles all cases properly",
+        "Early exit when imbalance detected",
+        "Clear push/pop operations"
+      ]
+    },
+    {
+      "problem": "Calculate power (x^y)",
+      "pseudo_code": "start\n  read x, y\n  result=1\n  for i=1 to y\n    result=result*x\n  endfor\n  print result\nend",
+      "marks": 15,
+      "feedback": [
+        "Correct for positive integers",
+        "Fails for y=0 or negative y",
+        "No handling of fractional exponents",
+        "Clear iterative approach"
+      ]
+    },
+    {
+      "problem": "Find second largest in array (flawed)",
+      "pseudo_code": "start\n  read arr\n  if length(arr)<2\n    print 'Error'\n    stop\n  endif\n  sort arr\n  print arr[length(arr)-2]\nend",
+      "marks": 10,
+      "feedback": [
+        "Works but inefficient (full sort not needed)",
+        "Proper edge case handling",
+        "Could be done in O(n) time",
+        "Readable but suboptimal"
+      ]
+    },
+    {
+      "problem": "Merge two sorted arrays",
+      "pseudo_code": "start\n  read arr1, arr2\n  i=0, j=0\n  merged=[]\n  while i<length(arr1) and j<length(arr2)\n    if arr1[i]<arr2[j]\n      append arr1[i] to merged\n      i=i+1\n    else\n      append arr2[j] to merged\n      j=j+1\n    endif\n  endwhile\n  while i<length(arr1)\n    append arr1[i] to merged\n    i=i+1\n  endwhile\n  while j<length(arr2)\n    append arr2[j] to merged\n    j=j+1\n  endwhile\n  print merged\nend",
+      "marks": 20,
+      "feedback": [
+        "Correct merge algorithm",
+        "Efficient O(n) solution",
+        "Handles remaining elements properly",
+        "Clear pointer management"
+      ]
+    },
+    {
+      "problem": "Check anagram strings",
+      "pseudo_code": "start\n  read str1, str2\n  if length(str1)!=length(str2)\n    print 'Not anagram'\n    stop\n  endif\n  sort str1\n  sort str2\n  if str1=str2\n    print 'Anagram'\n  else\n    print 'Not anagram'\n  endif\nend",
+      "marks": 16,
+      "feedback": [
+        "Correct anagram logic",
+        "Early exit for different lengths",
+        "Inefficient due to sorting",
+        "Case sensitivity not handled"
+      ]
+    },
+    {
+      "problem": "Check if number is even",
+      "pseudo_code": "start\n  read num\n  if num % 2 == 0\n    print 'Even'\n  else\n    print 'Odd'\n  endif\nend",
+      "marks": 15,
+      "feedback": [
+        "Correct even/odd check",
+        "Simple and clear",
+        "No input validation",
+        "Handles all integers"
+      ]
+    },
+    {
+      "problem": "Check if number is even (flawed)",
+      "pseudo_code": "start\n  read num\n  if num / 2 == 0\n    print 'Even'\n  else\n    print 'Odd'\n  endif\nend",
+      "marks": 5,
+      "feedback": [
+        "Uses division instead of modulus",
+        "Will fail for most numbers",
+        "Basic structure exists",
+        "Incorrect logic"
+      ]
+    },
+    {
+      "problem": "Calculate circle area",
+      "pseudo_code": "start\n  read radius\n  if radius <= 0\n    print 'Invalid radius'\n    stop\n  endif\n  area = 3.14159 * radius * radius\n  print area\nend",
+      "marks": 16,
+      "feedback": [
+        "Correct area calculation",
+        "Input validation",
+        "Clear formula",
+        "Good error handling"
+      ]
+    },
+    {
+      "problem": "Calculate circle area (flawed)",
+      "pseudo_code": "start\n  read radius\n  area = 3.14 * radius\n  print area\nend",
+      "marks": 4,
+      "feedback": [
+        "Wrong formula (missing squared term)",
+        "No input validation",
+        "Incorrect constant precision",
+        "Basic structure present"
+      ]
+    },
+    {
+      "problem": "Find absolute value",
+      "pseudo_code": "start\n  read num\n  if num < 0\n    abs = -num\n  else\n    abs = num\n  endif\n  print abs\nend",
+      "marks": 14,
+      "feedback": [
+        "Correct absolute value logic",
+        "Simple conditional",
+        "No type checking",
+        "Clear variable naming"
+      ]
+    },
+    {
+      "problem": "Find absolute value (flawed)",
+      "pseudo_code": "start\n  read num\n  abs = num * -1\n  print abs\nend",
+      "marks": 6,
+      "feedback": [
+        "Fails for positive numbers",
+        "No conditional check",
+        "Incorrect logic",
+        "Basic I/O present"
+      ]
+    },
+    {
+      "problem": "Calculate BMI",
+      "pseudo_code": "start\n  read weight, height\n  if height <= 0\n    print 'Invalid height'\n    stop\n  endif\n  bmi = weight / (height * height)\n  print bmi\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct BMI formula",
+        "Height validation",
+        "Clear calculation",
+        "No weight validation"
+      ]
+    },
+    {
+      "problem": "Calculate BMI (flawed)",
+      "pseudo_code": "start\n  read weight, height\n  bmi = weight / height\n  print bmi\nend",
+      "marks": 5,
+      "feedback": [
+        "Missing height squared",
+        "No input validation",
+        "Incorrect formula",
+        "Basic structure exists"
+      ]
+    },
+    {
+      "problem": "Convert Celsius to Fahrenheit",
+      "pseudo_code": "start\n  read celsius\n  fahrenheit = (celsius * 9/5) + 32\n  print fahrenheit\nend",
+      "marks": 15,
+      "feedback": [
+        "Correct conversion formula",
+        "Simple and clear",
+        "No range checking",
+        "Good variable naming"
+      ]
+    },
+    {
+      "problem": "Convert Celsius to Fahrenheit (flawed)",
+      "pseudo_code": "start\n  read celsius\n  fahrenheit = celsius * 2 + 30\n  print fahrenheit\nend",
+      "marks": 7,
+      "feedback": [
+        "Approximate but incorrect formula",
+        "No exact calculation",
+        "Basic I/O working",
+        "Rough approximation"
+      ]
+    },
+    {
+      "problem": "Check leap year",
+      "pseudo_code": "start\n  read year\n  if year % 400 == 0\n    print 'Leap year'\n  elseif year % 100 == 0\n    print 'Not leap year'\n  elseif year % 4 == 0\n    print 'Leap year'\n  else\n    print 'Not leap year'\n  endif\nend",
+      "marks": 18,
+      "feedback": [
+        "Correct leap year logic",
+        "Handles all cases",
+        "Clear condition hierarchy",
+        "No input validation"
+      ]
+    },
+    {
+      "problem": "Check leap year (flawed)",
+      "pseudo_code": "start\n  read year\n  if year % 4 == 0\n    print 'Leap year'\n  else\n    print 'Not leap year'\n  endif\nend",
+      "marks": 10,
+      "feedback": [
+        "Misses century year rules",
+        "Partial logic only",
+        "Fails for 1900, 2100 etc.",
+        "Basic structure correct"
+      ]
+    },
+    {
+      "problem": "Find median of three numbers",
+      "pseudo_code": "start\n  read a, b, c\n  if (a > b and a < c) or (a < b and a > c)\n    median = a\n  elseif (b > a and b < c) or (b < a and b > c)\n    median = b\n  else\n    median = c\n  endif\n  print median\nend",
+      "marks": 16,
+      "feedback": [
+        "Correct median logic",
+        "Handles all permutations",
+        "Clear comparisons",
+        "Could be more concise"
+      ]
+    },
+    {
+      "problem": "Find median of three numbers (flawed)",
+      "pseudo_code": "start\n  read a, b, c\n  median = (a + b + c) / 3\n  print median\nend",
+      "marks": 5,
+      "feedback": [
+        "Calculates mean instead of median",
+        "Completely wrong approach",
+        "Basic math operations work",
+        "Incorrect solution"
+      ]
+    },
+    {
+      "problem": "Calculate simple interest",
+      "pseudo_code": "start\n  read principal, rate, time\n  if principal <= 0 or rate < 0 or time <= 0\n    print 'Invalid input'\n    stop\n  endif\n  interest = (principal * rate * time) / 100\n  print interest\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct interest formula",
+        "Input validation",
+        "Clear calculation",
+        "Good error handling"
+      ]
+    },
+    {
+      "problem": "Calculate simple interest (flawed)",
+      "pseudo_code": "start\n  read principal, rate, time\n  interest = principal + rate + time\n  print interest\nend",
+      "marks": 3,
+      "feedback": [
+        "Completely wrong formula",
+        "No input validation",
+        "Basic I/O present",
+        "No understanding of concept"
+      ]
+    },
+    {
+      "problem": "Find roots of quadratic equation",
+      "pseudo_code": "start\n  read a, b, c\n  if a == 0\n    print 'Not quadratic'\n    stop\n  endif\n  discriminant = b*b - 4*a*c\n  if discriminant < 0\n    print 'No real roots'\n  elseif discriminant == 0\n    root = -b / (2*a)\n    print 'Double root:', root\n  else\n    root1 = (-b + sqrt(discriminant)) / (2*a)\n    root2 = (-b - sqrt(discriminant)) / (2*a)\n    print 'Roots:', root1, root2\n  endif\nend",
+      "marks": 19,
+      "feedback": [
+        "Complete quadratic solver",
+        "Handles all cases",
+        "Correct discriminant check",
+        "Clear mathematical expressions"
+      ]
+    },
+    {
+      "problem": "Find roots of quadratic equation (flawed)",
+      "pseudo_code": "start\n  read a, b, c\n  root1 = -b / a\n  root2 = c / a\n  print 'Roots:', root1, root2\nend",
+      "marks": 6,
+      "feedback": [
+        "Incorrect root calculation",
+        "No discriminant check",
+        "Only works in specific cases",
+        "Basic math operations present"
+      ]
+    },
+    {
+      "problem": "Calculate compound interest",
+      "pseudo_code": "start\n  read principal, rate, time, compounds\n  if principal <= 0 or rate < 0 or time <= 0 or compounds <= 0\n    print 'Invalid input'\n    stop\n  endif\n  amount = principal * (1 + rate/(100*compounds)) ^ (compounds*time)\n  interest = amount - principal\n  print interest\nend",
+      "marks": 18,
+      "feedback": [
+        "Correct compound interest formula",
+        "Complete input validation",
+        "Clear calculation steps",
+        "Proper exponent handling"
+      ]
+    },
+    {
+      "problem": "Calculate compound interest (flawed)",
+      "pseudo_code": "start\n  read principal, rate, time\n  interest = principal * rate * time\n  print interest\nend",
+      "marks": 5,
+      "feedback": [
+        "Simple interest formula instead",
+        "Missing compounding parameter",
+        "No input validation",
+        "Basic math correct"
+      ]
+    },
+    {
+      "problem": "Check if point is in circle",
+      "pseudo_code": "start\n  read x, y, cx, cy, radius\n  distance = sqrt((x-cx)^2 + (y-cy)^2)\n  if distance <= radius\n    print 'Inside'\n  else\n    print 'Outside'\n  endif\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct distance check",
+        "Clear mathematical formula",
+        "No input validation",
+        "Good geometric approach"
+      ]
+    },
+    {
+      "problem": "Check if point is in circle (flawed)",
+      "pseudo_code": "start\n  read x, y, cx, cy, radius\n  if x <= radius and y <= radius\n    print 'Inside'\n  else\n    print 'Outside'\n  endif\nend",
+      "marks": 6,
+      "feedback": [
+        "Incorrect boundary check",
+        "No actual distance calculation",
+        "Only works for origin-centered circles",
+        "Basic conditionals present"
+      ]
+    },
+    {
+      "problem": "Calculate triangle area",
+      "pseudo_code": "start\n  read a, b, c\n  if a+b<=c or b+c<=a or a+c<=b\n    print 'Invalid triangle'\n    stop\n  endif\n  s = (a + b + c) / 2\n  area = sqrt(s * (s-a) * (s-b) * (s-c))\n  print area\nend",
+      "marks": 18,
+      "feedback": [
+        "Correct Heron's formula",
+        "Triangle validity check",
+        "Clear calculation steps",
+        "Good error handling"
+      ]
+    },
+    {
+      "problem": "Calculate triangle area (flawed)",
+      "pseudo_code": "start\n  read base, height\n  area = base + height\n  print area\nend",
+      "marks": 4,
+      "feedback": [
+        "Wrong formula (should multiply not add)",
+        "No triangle validation",
+        "Basic I/O working",
+        "Incorrect solution"
+      ]
+    },
+    {
+      "problem": "Find day of week (Zeller's formula)",
+      "pseudo_code": "start\n  read day, month, year\n  if month < 3\n    month = month + 12\n    year = year - 1\n  endif\n  h = (day + (13*(month+1)/5) + year + (year/4) - (year/100) + (year/400)\n  h = h % 7\n  days = ['Sat','Sun','Mon','Tue','Wed','Thu','Fri']\n  print days[h]\nend",
+      "marks": 19,
+      "feedback": [
+        "Correct Zeller's implementation",
+        "Handles month adjustment",
+        "Clear formula steps",
+        "Good array usage for days"
+      ]
+    },
+    {
+      "problem": "Find day of week (flawed)",
+      "pseudo_code": "start\n  read day, month, year\n  day_num = (day + month + year) % 7\n  print day_num\nend",
+      "marks": 5,
+      "feedback": [
+        "Completely incorrect algorithm",
+        "No valid day calculation",
+        "Basic math operations present",
+        "No understanding of date math"
+      ]
+    },
+    {
+      "problem": "Calculate GCD using Euclidean algorithm",
+      "pseudo_code": "start\n  read a, b\n  a = abs(a)\n  b = abs(b)\n  while b != 0\n    temp = b\n    b = a % b\n    a = temp\n  endwhile\n  print a\nend",
+      "marks": 18,
+      "feedback": [
+        "Correct Euclidean algorithm",
+        "Handles negatives",
+        "Clear variable swapping",
+        "Efficient implementation"
+      ]
+    },
+    {
+      "problem": "Calculate GCD (flawed)",
+      "pseudo_code": "start\n  read a, b\n  gcd = 1\n  for i = 1 to a\n    if a % i == 0 and b % i == 0\n      gcd = i\n    endif\n  endfor\n  print gcd\nend",
+      "marks": 12,
+      "feedback": [
+        "Inefficient but correct",
+        "Brute-force approach",
+        "Works but not optimal",
+        "Clear logic"
+      ]
+    },
+    {
+      "problem": "Calculate LCM",
+      "pseudo_code": "start\n  read a, b\n  gcd = a\n  temp = b\n  while temp != 0\n    remainder = gcd % temp\n    gcd = temp\n    temp = remainder\n  endwhile\n  lcm = (a * b) / gcd\n  print lcm\nend",
+      "marks": 18,
+      "feedback": [
+        "Correct LCM via GCD",
+        "Efficient calculation",
+        "Clear mathematical approach",
+        "Good variable naming"
+      ]
+    },
+    {
+      "problem": "Calculate LCM (flawed)",
+      "pseudo_code": "start\n  read a, b\n  lcm = a * b\n  print lcm\nend",
+      "marks": 7,
+      "feedback": [
+        "Only correct for coprime numbers",
+        "No GCD calculation",
+        "Basic multiplication",
+        "Incorrect general solution"
+      ]
+    },
+    {
+      "problem": "Check if number is perfect square",
+      "pseudo_code": "start\n  read num\n  if num < 0\n    print 'Not perfect square'\n    stop\n  endif\n  root = sqrt(num)\n  if root == floor(root)\n    print 'Perfect square'\n  else\n    print 'Not perfect square'\n  endif\nend",
+      "marks": 16,
+      "feedback": [
+        "Correct square check",
+        "Handles negative numbers",
+        "Clear mathematical approach",
+        "Good conditional check"
+      ]
+    },
+    {
+      "problem": "Check if number is perfect square (flawed)",
+      "pseudo_code": "start\n  read num\n  for i = 1 to num\n    if i * i == num\n      print 'Perfect square'\n      stop\n    endif\n  endfor\n  print 'Not perfect square'\nend",
+      "marks": 10,
+      "feedback": [
+        "Inefficient brute-force",
+        "Works but slow for large numbers",
+        "Basic looping present",
+        "Could use sqrt optimization"
+      ]
+    },
+    {
+      "problem": "Calculate sum of digits",
+      "pseudo_code": "start\n  read num\n  num = abs(num)\n  sum = 0\n  while num > 0\n    digit = num % 10\n    sum = sum + digit\n    num = num / 10\n  endwhile\n  print sum\nend",
+      "marks": 16,
+      "feedback": [
+        "Correct digit summing",
+        "Handles negatives",
+        "Clear modulo operations",
+        "Good loop termination"
+      ]
+    },
+    {
+      "problem": "Calculate sum of digits (flawed)",
+      "pseudo_code": "start\n  read num\n  sum = 0\n  for i = 1 to length(num)\n    sum = sum + num[i]\n  endfor\n  print sum\nend",
+      "marks": 6,
+      "feedback": [
+        "Assumes num is string/array",
+        "Type confusion",
+        "Basic looping attempt",
+        "Incorrect approach"
+      ]
+    },
+    {
+      "problem": "Reverse digits of number",
+      "pseudo_code": "start\n  read num\n  reversed = 0\n  isNegative = num < 0\n  num = abs(num)\n  while num > 0\n    digit = num % 10\n    reversed = reversed * 10 + digit\n    num = num / 10\n  endwhile\n  if isNegative\n    reversed = -reversed\n  endif\n  print reversed\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct digit reversal",
+        "Handles negatives",
+        "Clear place value logic",
+        "Good sign preservation"
+      ]
+    },
+    {
+      "problem": "Reverse digits of number (flawed)",
+      "pseudo_code": "start\n  read num\n  reversed = num\n  print reversed\nend",
+      "marks": 2,
+      "feedback": [
+        "Does nothing to reverse",
+        "No actual reversal logic",
+        "Basic I/O present",
+        "Incorrect solution"
+      ]
+    },
+    {
+      "problem": "Check if number is palindrome",
+      "pseudo_code": "start\n  read num\n  original = num\n  reversed = 0\n  num = abs(num)\n  while num > 0\n    digit = num % 10\n    reversed = reversed * 10 + digit\n    num = num / 10\n  endwhile\n  if original == reversed\n    print 'Palindrome'\n  else\n    print 'Not palindrome'\n  endif\nend",
+      "marks": 18,
+      "feedback": [
+        "Correct palindrome check",
+        "Handles negatives properly",
+        "Clear reversal logic",
+        "Good comparison"
+      ]
+    },
+    {
+      "problem": "Check if number is palindrome (flawed)",
+      "pseudo_code": "start\n  read num\n  if num == num\n    print 'Palindrome'\n  else\n    print 'Not palindrome'\n  endif\nend",
+      "marks": 3,
+      "feedback": [
+        "Always returns true",
+        "No actual comparison",
+        "Basic structure exists",
+        "Useless condition"
+      ]
+    },
+    {
+      "problem": "Generate Fibonacci sequence",
+      "pseudo_code": "start\n  read n\n  if n <= 0\n    print 'Invalid input'\n    stop\n  endif\n  a = 0\n  b = 1\n  print a\n  if n > 1\n    print b\n    for i = 3 to n\n      c = a + b\n      print c\n      a = b\n      b = c\n    endfor\n  endif\nend",
+      "marks": 18,
+      "feedback": [
+        "Correct Fibonacci generation",
+        "Input validation",
+        "Clear variable swapping",
+        "Good sequence handling"
+      ]
+    },
+    {
+      "problem": "Generate Fibonacci sequence (flawed)",
+      "pseudo_code": "start\n  read n\n  a = 0\n  b = 1\n  for i = 1 to n\n    print a\n    a = b\n    b = a + b\n  endfor\nend",
+      "marks": 10,
+      "feedback": [
+        "Incorrect sequence after first iteration",
+        "Variable update order wrong",
+        "Basic looping present",
+        "Partial logic correct"
+      ]
+    },
+    {
+      "problem": "Calculate power using recursion",
+      "pseudo_code": "function power(base, exp)\n  if exp == 0\n    return 1\n  elseif exp < 0\n    return 1 / power(base, -exp)\n  else\n    return base * power(base, exp-1)\n  endif\nend\n\nstart\n  read base, exp\n  result = power(base, exp)\n  print result\nend",
+      "marks": 19,
+      "feedback": [
+        "Correct recursive power",
+        "Handles negative exponents",
+        "Clear base cases",
+        "Good function structure"
+      ]
+    },
+    {
+      "problem": "Calculate power using recursion (flawed)",
+      "pseudo_code": "function power(base, exp)\n  return base * power(base, exp-1)\nend\n\nstart\n  read base, exp\n  result = power(base, exp)\n  print result\nend",
+      "marks": 6,
+      "feedback": [
+        "No base case - infinite recursion",
+        "Missing termination condition",
+        "Recursive structure present",
+        "Dangerous implementation"
+      ]
+    },
+    {
+      "problem": "Find sum of natural numbers",
+      "pseudo_code": "start\n  read n\n  if n < 1\n    print 'Invalid input'\n    stop\n  endif\n  sum = n * (n + 1) / 2\n  print sum\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct mathematical formula",
+        "Input validation",
+        "Efficient O(1) solution",
+        "Clear calculation"
+      ]
+    },
+    {
+      "problem": "Find sum of natural numbers (flawed)",
+      "pseudo_code": "start\n  read n\n  sum = 0\n  for i = 0 to n\n    sum = sum + i\n  endfor\n  print sum\nend",
+      "marks": 12,
+      "feedback": [
+        "Inefficient but correct",
+        "Brute-force approach",
+        "Works but not optimal",
+        "Could use formula"
+      ]
+    },
+    {
+      "problem": "Check if number is Armstrong number",
+      "pseudo_code": "start\n  read num\n  original = num\n  sum = 0\n  n = length(num)\n  num = abs(num)\n  while num > 0\n    digit = num % 10\n    sum = sum + digit ^ n\n    num = num / 10\n  endwhile\n  if sum == original\n    print 'Armstrong'\n  else\n    print 'Not Armstrong'\n  endif\nend",
+      "marks": 18,
+      "feedback": [
+        "Correct Armstrong check",
+        "Handles digit power properly",
+        "Clear digit extraction",
+        "Good comparison"
+      ]
+    },
+    {
+      "problem": "Check if number is Armstrong number (flawed)",
+      "pseudo_code": "start\n  read num\n  sum = 0\n  while num > 0\n    digit = num % 10\n    sum = sum + digit\n    num = num / 10\n  endwhile\n  if sum == num\n    print 'Armstrong'\n  else\n    print 'Not Armstrong'\n  endif\nend",
+      "marks": 7,
+      "feedback": [
+        "Missing digit exponentiation",
+        "Compares sum to modified num",
+        "Basic digit extraction present",
+        "Incorrect logic"
+      ]
+    },
+    {
+      "problem": "Convert decimal to binary",
+      "pseudo_code": "start\n  read num\n  binary = ''\n  if num == 0\n    binary = '0'\n  else\n    num = abs(num)\n    while num > 0\n      bit = num % 2\n      binary = string(bit) + binary\n      num = num / 2\n    endwhile\n  endif\n  print binary\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct binary conversion",
+        "Handles zero case",
+        "Clear bit extraction",
+        "Good string building"
+      ]
+    },
+    {
+      "problem": "Convert decimal to binary (flawed)",
+      "pseudo_code": "start\n  read num\n  binary = num\n  print binary\nend",
+      "marks": 2,
+      "feedback": [
+        "No conversion performed",
+        "Just echoes input",
+        "Basic I/O present",
+        "Incorrect solution"
+      ]
+    },
+    {
+      "problem": "Find largest of three numbers",
+      "pseudo_code": "start\n  read a, b, c\n  max = a\n  if b > max\n    max = b\n  endif\n  if c > max\n    max = c\n  endif\n  print max\nend",
+      "marks": 15,
+      "feedback": [
+        "Correct maximum finding",
+        "Clear comparisons",
+        "Simple and effective",
+        "No input validation"
+      ]
+    },
+    {
+      "problem": "Find largest of three numbers (flawed)",
+      "pseudo_code": "start\n  read a, b, c\n  if a > b\n    print a\n  else\n    print b\n  endif\nend",
+      "marks": 8,
+      "feedback": [
+        "Ignores third number",
+        "Partial logic only",
+        "Basic comparison present",
+        "Incomplete solution"
+      ]
+    },
+    {
+      "problem": "Check if year is in future",
+      "pseudo_code": "start\n  read year\n  current_year = get_current_year()\n  if year > current_year\n    print 'Future year'\n  elseif year == current_year\n    print 'Current year'\n  else\n    print 'Past year'\n  endif\nend",
+      "marks": 16,
+      "feedback": [
+        "Correct year comparison",
+        "Handles all cases",
+        "Clear conditional structure",
+        "Good hypothetical function use"
+      ]
+    },
+    {
+      "problem": "Check if year is in future (flawed)",
+      "pseudo_code": "start\n  read year\n  if year > 2023\n    print 'Future year'\n  else\n    print 'Not future year'\n  endif\nend",
+      "marks": 9,
+      "feedback": [
+        "Hardcoded current year",
+        "No distinction for current year",
+        "Basic comparison present",
+        "Will become incorrect over time"
+      ]
+    },
+    {
+      "problem": "Calculate sum of series 1 + 1/2 + 1/3 + ... + 1/n",
+      "pseudo_code": "start\n  read n\n  if n <= 0\n    print 'Invalid input'\n    stop\n  endif\n  sum = 0\n  for i = 1 to n\n    sum = sum + 1/i\n  endfor\n  print sum\nend",
+      "marks": 16,
+      "feedback": [
+        "Correct harmonic series",
+        "Input validation",
+        "Clear accumulation",
+        "Good loop structure"
+      ]
+    },
+    {
+      "problem": "Calculate sum of series (flawed)",
+      "pseudo_code": "start\n  read n\n  sum = 0\n  for i = 1 to n\n    sum = sum + i\n  endfor\n  print sum\nend",
+      "marks": 6,
+      "feedback": [
+        "Calculates sum of integers instead",
+        "Wrong series computation",
+        "Basic looping present",
+        "Incorrect solution"
+      ]
+    },
+    {
+      "problem": "Check if string contains digit",
+      "pseudo_code": "start\n  read str\n  for i = 1 to length(str)\n    if str[i] >= '0' and str[i] <= '9'\n      print 'Contains digit'\n      stop\n    endif\n  endfor\n  print 'No digits'\nend",
+      "marks": 16,
+      "feedback": [
+        "Correct digit checking",
+        "Early exit when found",
+        "Clear character comparison",
+        "Good string traversal"
+      ]
+    },
+    {
+      "problem": "Check if string contains digit (flawed)",
+      "pseudo_code": "start\n  read str\n  if str == '0' or str == '1' or str == '2' or str == '3' or str == '4' or str == '5' or str == '6' or str == '7' or str == '8' or str == '9'\n    print 'Contains digit'\n  else\n    print 'No digits'\n  endif\nend",
+      "marks": 5,
+      "feedback": [
+        "Only checks whole string against digits",
+        "No character-by-character check",
+        "Extremely verbose condition",
+        "Incorrect approach"
+      ]
+    },
+    {
+      "problem": "Count words in string",
+      "pseudo_code": "start\n  read str\n  if length(str) == 0\n    print 0\n    stop\n  endif\n  words = 1\n  for i = 1 to length(str)-1\n    if str[i] == ' ' and str[i+1] != ' '\n      words = words + 1\n    endif\n  endfor\n  print words\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct word counting",
+        "Handles empty string",
+        "Clear space detection",
+        "Good edge case handling"
+      ]
+    },
+    {
+      "problem": "Count words in string (flawed)",
+      "pseudo_code": "start\n  read str\n  words = 0\n  for i = 1 to length(str)\n    if str[i] == ' '\n      words = words + 1\n    endif\n  endfor\n  print words\nend",
+      "marks": 10,
+      "feedback": [
+        "Counts spaces not words",
+        "Misses first word",
+        "Basic looping present",
+        "Incorrect logic"
+      ]
+    },
+    {
+      "problem": "Convert string to uppercase",
+      "pseudo_code": "start\n  read str\n  upper = ''\n  for i = 1 to length(str)\n    ch = str[i]\n    if ch >= 'a' and ch <= 'z'\n      upper = upper + char(ascii(ch) - 32)\n    else\n      upper = upper + ch\n    endif\n  endfor\n  print upper\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct case conversion",
+        "Handles non-letters properly",
+        "Clear ASCII manipulation",
+        "Good string building"
+      ]
+    },
+    {
+      "problem": "Convert string to uppercase (flawed)",
+      "pseudo_code": "start\n  read str\n  print 'UPPERCASE'\nend",
+      "marks": 2,
+      "feedback": [
+        "Ignores input completely",
+        "No conversion logic",
+        "Basic I/O present",
+        "Useless implementation"
+      ]
+    },
+    {
+      "problem": "Check if string is palindrome",
+      "pseudo_code": "start\n  read str\n  n = length(str)\n  for i = 1 to n/2\n    if str[i] != str[n-i+1]\n      print 'Not palindrome'\n      stop\n    endif\n  endfor\n  print 'Palindrome'\nend",
+      "marks": 18,
+      "feedback": [
+        "Correct palindrome check",
+        "Early exit when mismatch found",
+        "Efficient half-string comparison",
+        "Clear index calculation"
+      ]
+    },
+    {
+      "problem": "Check if string is palindrome (flawed)",
+      "pseudo_code": "start\n  read str\n  reversed = str\n  if str == reversed\n    print 'Palindrome'\n  else\n    print 'Not palindrome'\n  endif\nend",
+      "marks": 5,
+      "feedback": [
+        "Doesn't actually reverse string",
+        "Always returns true",
+        "Basic comparison present",
+        "Incorrect logic"
+      ]
+    },
+    {
+      "problem": "Count character occurrences",
+      "pseudo_code": "start\n  read str, char\n  count = 0\n  for i = 1 to length(str)\n    if str[i] == char\n      count = count + 1\n    endif\n  endfor\n  print count\nend",
+      "marks": 16,
+      "feedback": [
+        "Correct character counting",
+        "Simple and clear",
+        "Good string traversal",
+        "No input validation"
+      ]
+    },
+    {
+      "problem": "Count character occurrences (flawed)",
+      "pseudo_code": "start\n  read str, char\n  print length(str)\nend",
+      "marks": 3,
+      "feedback": [
+        "Counts string length instead",
+        "Ignores character parameter",
+        "Basic I/O present",
+        "Incorrect solution"
+      ]
+    },
+    {
+      "problem": "Replace character in string",
+      "pseudo_code": "start\n  read str, old, new\n  result = ''\n  for i = 1 to length(str)\n    if str[i] == old\n      result = result + new\n    else\n      result = result + str[i]\n    endif\n  endfor\n  print result\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct character replacement",
+        "Builds new string properly",
+        "Clear conditional check",
+        "Good string construction"
+      ]
+    },
+    {
+      "problem": "Replace character in string (flawed)",
+      "pseudo_code": "start\n  read str, old, new\n  str[1] = new\n  print str\nend",
+      "marks": 4,
+      "feedback": [
+        "Only replaces first character",
+        "No conditional check",
+        "Basic assignment present",
+        "Incomplete solution"
+      ]
+    },
+    {
+      "problem": "Check if string starts with prefix",
+      "pseudo_code": "start\n  read str, prefix\n  if length(prefix) > length(str)\n    print 'No'\n    stop\n  endif\n  for i = 1 to length(prefix)\n    if str[i] != prefix[i]\n      print 'No'\n      stop\n    endif\n  endfor\n  print 'Yes'\nend",
+      "marks": 17,
+      "feedback": [
+        "Correct prefix checking",
+        "Handles longer prefix case",
+        "Early exit when mismatch found",
+        "Clear character comparison"
+      ]
+    },
+    {
+      "problem": "Check if string starts with prefix (flawed)",
+      "pseudo_code": "start\n  read str, prefix\n  if str == prefix\n    print 'Yes'\n  else\n    print 'No'\n  endif\nend",
+      "marks": 7,
+      "feedback": [
+        "Checks whole string equality",
+        "No prefix-specific logic",
+        "Basic comparison present",
+        "Incorrect approach"
+      ]
+    },
+    {
+      "problem": "Remove whitespace from string",
+      "pseudo_code": "start\n  read str\n  result = ''\n  for i = 1 to length(str)\n    if str[i] != ' '\n      result = result + str[i]\n    endif\n  endfor\n  print result\nend",
+      "marks": 16,
+      "feedback": [
+        "Correct whitespace removal",
+        "Builds new string properly",
+        "Clear space detection",
+        "Good string construction"
+      ]
+    },
+    {
+      "problem": "Remove whitespace from string (flawed)",
+      "pseudo_code": "start\n  read str\n  str = 'no_spaces'\n  print str\nend",
+      "marks": 2,
+      "feedback": [
+        "Ignores input completely",
+        "No actual processing",
+        "Basic I/O present",
+        "Useless implementation"
+      ]
+    }
+  ]
+}

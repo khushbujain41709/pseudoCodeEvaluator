@@ -1,0 +1,38 @@
+Transformer consists of Encoder and Decoder.
+Encoder encodes the input text into vectors.
+Decoder generates output text one word at a time from encoded vectors and partial output text.
+
+Lecture introduces Transformers, the foundation of modern large language models (LLMs) like GPT.
+Two main training stages of LLMs: Pre-training (on large data) and Fine-tuning (on specific tasks).
+
+Transformers are deep learning models introduced in 2017 through the paper "Attention is All You Need".
+Widely used for tasks like translation, not just text generation.
+Originally built for language translation tasks like English to German.
+GPT’s text generation came later using the same base architecture.
+
+Step 1–2 of Transformers:
+Take input text (e.g., in English)
+Tokenization – break text into parts (tokens), each with a unique ID.
+
+Step 3: Encoding – tokens are converted to vector embeddings (numerical form).
+Embeddings group similar words (e.g., “apple”, “banana”) close together in space.
+
+Step 4: These embeddings carry word meanings and go to the decoder.
+Decoder generates translated or next words, one at a time.
+Decoder uses partial output and embeddings to predict the next word.
+Model learns better through training, like a normal neural network.
+
+Transformers = Encoder + Decoder blocks.
+Encoder turns input into embeddings; decoder creates output from it.
+
+Attention is the key idea: lets model focus on important words regardless of their position.
+Self-attention helps predict words based on all previous context, not just nearby words.
+
+Attention Mechanism : Attention is a critical aspect of Transformers, allowing the model to focus on important parts of the input sequence when making predictions, regardless of the position of the words. Self-attention helps the model weigh the importance of different words relative to each other.
+
+Self-Attention and Contextual Understanding : Self-attention helps the model maintain context and understand long-range dependencies between words in a sequence, making it possible to predict the next word in a sentence by considering earlier words.
+
+GPT vs BERT  The lecture explains the differences between GPT(Generative Pretrained Transformer) and BERT(Bidirectional Encoder representations from transformer). GPT generates words sequentially (left to right), whereas BERT predicts missing words in a sentence and captures contextual nuances, making it particularly useful for tasks like sentiment analysis. Both are based on the Transformer architecture. BERT model has encoder only and GPT model has decoder only.
+
+Not all LLMs are transformers. LLMs can also be recurrent neural networks. 
+Not all transformers are LLMs. Transformers can also be used for LLMs.
