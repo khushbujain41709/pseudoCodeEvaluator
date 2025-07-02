@@ -1,5 +1,0 @@
-1 bit LLM also known as bitNet b 1.58
-Using Pareto Improvement, we can change weights of 16 bits floats LLM Transformer to {-1, 0, 1}
-It matches full precision LLM transformer with same model size and training tokens.
-It is more cost effective in terms of latency, throughput and energy consumption.
-We multiply weights with input so this do alot of multiplication operations but using this technique we do addition instead of multiplication as any number multiplied with 0 is 0, multilpied by 1 is number itself and number multiplied with -1 is number itself with negative sign. 
