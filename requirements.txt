@@ -1,0 +1,18 @@
+# Core Libraries
+transformers==4.40.1
+datasets>=2.18.0
+peft==0.10.0
+accelerate==0.30.1
+bitsandbytes==0.43.1
+
+# Quantization Support
+torch>=2.1.0
+triton>=2.1.0
+
+# Web Interface
+streamlit==1.35.0
+
+# Utilities
+scipy>=1.11.0
+numpy>=1.25.0
+sentencepiece  # Required for some tokenizer models
